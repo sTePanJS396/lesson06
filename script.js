@@ -13,32 +13,39 @@ function randomNumber() {
     let number = 50;
     let whoNumber;
     let c;
+    let count = 10;
     // объявим все необходимые переменные
 
-    function isRandomNumber(n) {
-        whoNumber = +prompt('Введи число от 1 до 100');
+    function isRandomNumber() {
+        whoNumber = prompt('Введи число от 1 до 100');
         function isNum() {
-
-            if (whoNumber === 50) {
-                return c = true;                
-            } else if (whoNumber < 50) {
-                alert('Число меньше, чем надо!');
-                isRandomNumber();
-            } else if (whoNumber > 50) {
-                alert('Число больше, чем надо!');
-                isRandomNumber();
+            if (Number(whoNumber) === number) {
+                return c = true;
+            } else {
+               if (whoNumber === null) {
+                   alert('Игра окончена!');
+                   console.log(typeof whoNumber);
+                   return c = false;
+               } else if (Number(whoNumber) < 50) {
+                   alert('Загаданное число больше!');
+                   console.log(typeof whoNumber);
+               } else if (Number(whoNumber) > 50) {
+                   alert('Загаданное число меньше!');
+                   console.log(typeof whoNumber);
+               } else {
+                   alert('Введи число!');
+               }
             }
-
-            
         };
+
+        isNum();
 
         if (c === true) {
             alert('Ты угадал!');
         } else {
-            isNum();
+            isRandomNumber();
         }
     } 
-
     isRandomNumber();
 };
 randomNumber();
