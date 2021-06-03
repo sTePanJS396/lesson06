@@ -42,7 +42,9 @@ function randomNumber() {
 
         if (c === true) {
             alert('Ты угадал!');
-        } else {
+        } else if (c == false){
+            alert('Пока!');
+        } esle {
             isRandomNumber();
         }
     } 
